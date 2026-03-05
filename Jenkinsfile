@@ -1,7 +1,5 @@
-stage('SonarQube Analysis') {
-    steps {
-        withSonarQubeEnv('sonar') {
-            sh 'mvn -DskipTests clean verify sonar:sonar'
-        }
-    }
+stage('Checkout') {
+  steps {
+    git branch: 'main', url: 'https://github.com/amir0Raouine/devopspipe.git'
+  }
 }
